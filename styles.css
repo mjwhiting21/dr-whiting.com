@@ -188,6 +188,10 @@ main {
   padding: 4rem 0;
 }
 
+.first-section {
+  padding-top: 2rem;
+}
+
 .section-heading {
   margin-bottom: 1.25rem;
 }
