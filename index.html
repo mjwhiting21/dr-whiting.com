@@ -3,51 +3,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dr Whiting — Home</title>
+  <title>Dr. Jericho Whiting | The Legend, The Lanyard, The Lab</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
-    <div class="container">
-      <h1>Dr Whiting</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <a class="brand" href="index.html">Dr. Jericho Whiting</a>
+    <nav aria-label="Primary navigation">
+      <a href="#video">Video</a>
+      <a href="#poem">Poem</a>
+      <a href="consulting/index.html">Consulting</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section id="hero">
-      <h2>Welcome</h2>
-      <p>This is a minimal starter website for Dr Whiting.</p>
-      <button id="learnBtn">Learn more</button>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Biology faculty. Wildlife scholar. Possible keeper of the sacred field clipboard.</p>
+        <h1>Dr. Jericho Whiting, professionally serious and spiritually followed by a theme song.</h1>
+        <p>
+          Welcome to the internet's smallest shrine to a BYU-Idaho biology professor who studies wildlife
+          conservation, teaches humans, and appears to possess the calm authority of a man who could identify
+          a bird by its side-eye.
+        </p>
+        <a class="button" href="#video">Begin the academic cinema</a>
+      </div>
+      <div class="specimen-panel" aria-label="Field notes">
+        <span>Field Note 01</span>
+        <strong>Observed behavior:</strong>
+        <p>Explains ecology. Inspires undergrads. Refuses to be out-stared by amphibians.</p>
+      </div>
     </section>
 
-    <section id="about">
-      <h3>About</h3>
-      <p>Short bio or introduction goes here.</p>
+    <section id="video" class="video-section">
+      <div class="section-heading">
+        <p class="eyebrow">Primary text</p>
+        <h2>The Video Around Which This Whole Thing Orbits</h2>
+      </div>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/oNatVirn2cQ?start=10"
+          title="Dr. Jericho Whiting video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
     </section>
 
-    <section id="services">
-      <h3>Services</h3>
-      <ul>
-        <li>Service A</li>
-        <li>Service B</li>
-      </ul>
+    <section id="poem" class="poem-section">
+      <div class="section-heading">
+        <p class="eyebrow">A scholarly verse, peer-reviewed by vibes</p>
+        <h2>Ode to Dr. Whiting</h2>
+      </div>
+      <article class="poem">
+        <p>In Rexburg halls where lab coats gleam,</p>
+        <p>And microscopes observe the dream,</p>
+        <p>There walks a man with field-born grace,</p>
+        <p>And probably sunscreen on his face.</p>
+
+        <p>He speaks of owls, of range, of streams,</p>
+        <p>Of conservation's careful schemes,</p>
+        <p>While students write with startled speed:</p>
+        <p>"This ecosystem has a need."</p>
+
+        <p>O Jericho, with lecture might,</p>
+        <p>You make the food web feel polite.</p>
+        <p>The elk stand tall. The trout confer.</p>
+        <p>The sagebrush whispers, "Yes, professor."</p>
+
+        <p>So raise a beaker, clean and bright,</p>
+        <p>To fieldwork boots and classroom light.</p>
+        <p>For wildlife, data, jokes, and awe:</p>
+        <p>Dr. Whiting brings ecological law.</p>
+      </article>
     </section>
 
-    <section id="contact">
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    <section class="facts-strip" aria-label="Professional facts">
+      <div>
+        <span>Role</span>
+        <strong>BYU-Idaho Biology Faculty</strong>
+      </div>
+      <div>
+        <span>Focus</span>
+        <strong>Wildlife Conservation & Biology</strong>
+      </div>
+      <div>
+        <span>Contact</span>
+        <strong>whitingj@byui.edu</strong>
+      </div>
+    </section>
+
+    <section class="consulting-callout">
+      <p class="eyebrow">For the serious people with maps, permits, and hard hats</p>
+      <h2>Need a professional conservation consultant?</h2>
+      <p>
+        Step through to a polished consulting site describing Dr. Whiting's biology background,
+        conservation experience, and practical wildlife services.
+      </p>
+      <a class="button dark" href="consulting/index.html">Visit Whiting Wildlife Consulting</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">© " + new Date().getFullYear() + " Dr Whiting</div>
+    <p>
+      Built as an affectionate, unofficial tribute. Professional details reference the
+      <a href="https://www.byui.edu/directories/jericho-whiting">public BYU-Idaho directory</a>.
+    </p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
