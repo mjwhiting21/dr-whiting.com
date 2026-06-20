@@ -28,6 +28,10 @@ body {
   background: var(--paper);
 }
 
+.home-page {
+  background: #e6e8ea;
+}
+
 a {
   color: inherit;
 }
@@ -50,14 +54,54 @@ a {
   background: rgba(255, 255, 255, 0.94);
 }
 
+.site-header.consulting .brand {
+  position: static;
+  transform: none;
+  text-transform: none;
+}
+
+.home-page .site-header {
+  color: #ffffff;
+  background: #101d42;
+  border-bottom: 3px solid #c8a75f;
+}
+
+.home-page .brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: 800;
+  text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0;
+}
+
+body:not(.consulting-page) .brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1;
+  color: #fffdf6;
+  -webkit-text-stroke: 1px #c8a75f;
+  text-shadow:
+    2px 2px 0 #071837,
+    4px 4px 0 #c8a75f,
+    6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.home-page .site-header .brand {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 transparent !important;
+  text-shadow: none !important;
 }
 
 nav {
   display: flex;
+  margin-left: auto;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.85rem;
@@ -74,6 +118,33 @@ nav a:hover {
   color: var(--leaf);
 }
 
+.home-page nav a {
+  color: rgba(255, 255, 255, 0.86);
+  padding: 0.35rem 0.65rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-page nav a:hover {
+  color: #ffffff;
+}
+
+body:not(.consulting-page) {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+body:not(.consulting-page) .video-section h2,
+body:not(.consulting-page) .poem-section h2,
+body:not(.consulting-page) .consulting-callout h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body:not(.consulting-page) .poem p {
+  font-family: Rockwell, "Roboto Slab", Georgia, serif;
+  font-weight: 700;
+}
+
 main {
   overflow: hidden;
 }
@@ -86,7 +157,8 @@ main {
 .consulting-hero,
 .two-column,
 .service-grid,
-.content-page {
+.content-page,
+.animal-roster {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
 }
@@ -188,12 +260,46 @@ main {
   padding: 4rem 0;
 }
 
+.home-page .video-section {
+  width: 100%;
+  margin-top: 0;
+  padding: clamp(3rem, 7vw, 6rem) 1rem;
+  color: #ffffff;
+  background: #101d42;
+  border: 0;
+  border-radius: 0;
+}
+
+.home-page .consulting-callout {
+  background: #101d42;
+}
+
+.home-page .video-section .section-heading h2 {
+  color: #ffffff;
+}
+
+.home-page .video-section .section-heading,
+.home-page .video-section .video-frame {
+  width: min(1120px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .first-section {
   padding-top: 2rem;
 }
 
 .section-heading {
   margin-bottom: 1.25rem;
+}
+
+.video-section .section-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.video-section .section-heading h2 {
+  max-width: none;
 }
 
 .section-heading h2,
@@ -210,8 +316,8 @@ main {
 .video-frame {
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #101712;
-  border: 8px solid var(--ink);
+  background: #ffffff;
+  border: 8px solid #f8f6ef;
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
@@ -228,7 +334,7 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.55rem 2rem;
   padding: clamp(1.25rem, 4vw, 2rem);
-  background: var(--white);
+  background: #f8f6ef;
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
@@ -257,6 +363,33 @@ main {
   background: var(--sky);
 }
 
+.home-page .facts-strip div:nth-child(1) {
+  color: #071837;
+  background: #c8a75f;
+}
+
+.home-page .facts-strip div:nth-child(1) span {
+  color: rgba(7, 24, 55, 0.72);
+}
+
+.home-page .facts-strip div:nth-child(2) {
+  color: var(--white);
+  background: #101d42;
+}
+
+.home-page .facts-strip div:nth-child(2) span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.home-page .facts-strip div:nth-child(3) {
+  color: #071837;
+  background: #f8f6ef;
+}
+
+.home-page .facts-strip div:nth-child(3) span {
+  color: #8f6b25;
+}
+
 .facts-strip span {
   display: block;
   margin-bottom: 0.5rem;
@@ -281,6 +414,133 @@ main {
   border-radius: 8px;
 }
 
+.field-notes {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 4rem auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: #ffffff;
+  background: #071837;
+  border: 1px solid #02091a;
+  border-radius: 8px;
+}
+
+.field-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.field-notes-grid article {
+  padding: 1.25rem;
+  color: #071837;
+  background: #c8a75f;
+  border: 1px solid #8f6b25;
+  border-radius: 8px;
+}
+
+.field-notes-grid h3 {
+  margin: 0 0 0.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.field-notes-grid p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.animal-roster {
+  padding: 4rem 0;
+}
+
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.animal-card {
+  overflow: hidden;
+  color: #071837;
+  background: #f8f6ef;
+  border: 3px solid #c8a75f;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 #071837;
+}
+
+.animal-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-bottom: 3px solid #071837;
+}
+
+.animal-card div {
+  min-height: 180px;
+  padding: 0.85rem;
+}
+
+.animal-card span {
+  color: #8f6b25;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.animal-card h3 {
+  margin: 0.2rem 0 0.55rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.animal-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.field-notes .eyebrow,
+.whiting-quote .eyebrow {
+  color: inherit;
+}
+
+.whiting-quote {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 4rem auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  color: #071837;
+  text-align: center;
+  background: #c8a75f;
+  border: 1px solid #8f6b25;
+  border-radius: 8px;
+}
+
+.whiting-quote blockquote {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.whiting-quote blockquote p {
+  margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.whiting-quote cite {
+  display: block;
+  margin-top: 1.25rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
 .consulting-callout .eyebrow,
 .consulting-callout p {
   color: rgba(255, 255, 255, 0.78);
@@ -299,6 +559,191 @@ main {
 
 .consulting-page {
   background: #f6f8f5;
+}
+
+.consulting-photo-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(760px, calc(100vh - 72px));
+  overflow: hidden;
+  color: var(--white);
+  background: #17211d;
+}
+
+.consulting-photo-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(10, 20, 22, 0.5);
+}
+
+.consulting-photo-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.consulting-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 6rem 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.64);
+}
+
+.consulting-hero-content h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5vw, 5.4rem);
+  line-height: 0.98;
+}
+
+.consulting-hero-content .eyebrow,
+.consulting-hero-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.consulting-hero-content .button {
+  text-shadow: none;
+}
+
+.consulting-page-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 540px;
+  overflow: hidden;
+  color: var(--white);
+  background: #17211d;
+}
+
+.consulting-page-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(10, 20, 22, 0.48);
+}
+
+.consulting-page-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero > img {
+  object-position: 70% center;
+}
+
+.services-hero > img {
+  object-position: 32% center;
+}
+
+.contact-hero > img {
+  object-position: 58% center;
+}
+
+.consulting-page-hero > div {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.64);
+}
+
+.consulting-page-hero h1 {
+  max-width: 800px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.98;
+}
+
+.consulting-page-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.consulting-principles,
+.service-process {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.25fr) repeat(3, minmax(0, 0.75fr));
+  gap: 1.5rem;
+  margin-top: 5rem;
+  padding: 2.5rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.consulting-principles h2,
+.service-process h2,
+.inquiry-guide h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.04;
+}
+
+.consulting-principles article,
+.service-process article {
+  padding: 1.25rem 0 0 1rem;
+  border-left: 3px solid var(--gold);
+}
+
+.consulting-principles h3,
+.service-process h3 {
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.consulting-principles p,
+.service-process p,
+.service-intro > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.service-intro {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.service-intro > p:last-child {
+  font-size: 1.12rem;
+}
+
+.service-process article span {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--leaf);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.inquiry-guide {
+  padding: 1.5rem;
+  background: #dce9e1;
+  border-left: 4px solid var(--leaf);
+}
+
+.inquiry-guide ol {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
 }
 
 .consulting-hero {
@@ -339,7 +784,7 @@ main {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding: 4rem 0;
+  padding: 6rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -347,7 +792,43 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
+}
+
+.consulting-species {
+  padding: 6rem max(1rem, calc((100% - 1120px) / 2));
+  background: #dce9e1;
+}
+
+.consulting-species .section-heading {
+  max-width: 760px;
+}
+
+.consulting-species-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.consulting-species-grid figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.consulting-species-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.consulting-species-grid figcaption {
+  padding: 0.75rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .nature-gallery {
@@ -422,13 +903,21 @@ main {
     flex-direction: column;
   }
 
+  .brand {
+    position: static;
+    transform: none;
+  }
+
   nav {
     justify-content: flex-start;
   }
 
   .hero,
   .two-column,
-  .consulting-hero {
+  .consulting-hero,
+  .contact-layout,
+  .consulting-principles,
+  .service-process {
     grid-template-columns: 1fr;
   }
 
@@ -439,8 +928,28 @@ main {
 
   .poem,
   .facts-strip,
-  .service-grid {
+  .service-grid,
+  .field-notes-grid,
+  .animal-grid,
+  .consulting-species-grid {
     grid-template-columns: 1fr;
+  }
+
+  .animal-grid,
+  .consulting-species-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .animal-card div {
+    min-height: 0;
+  }
+
+  .consulting-photo-hero {
+    min-height: 620px;
+  }
+
+  .consulting-page-hero {
+    min-height: 430px;
   }
 
   .consulting-hero {
