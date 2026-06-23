@@ -505,8 +505,45 @@ main {
 }
 
 .field-notes .eyebrow,
-.whiting-quote .eyebrow {
+.whiting-quote .eyebrow,
+.whiting-glossary .eyebrow {
   color: inherit;
+}
+
+.whiting-glossary {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto 4rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: #071837;
+  background: #f8f6ef;
+  border: 3px solid #c8a75f;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 #071837;
+}
+
+.whiting-glossary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.whiting-glossary dl div {
+  padding: 1rem;
+  background: #e6e8ea;
+  border-left: 6px solid #101d42;
+}
+
+.whiting-glossary dt {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.whiting-glossary dd {
+  margin: 0.45rem 0 0;
+  font-weight: 700;
 }
 
 .whiting-quote {
@@ -901,6 +938,8 @@ main {
     position: static;
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
   }
 
   .brand {
@@ -909,7 +948,21 @@ main {
   }
 
   nav {
+    width: 100%;
     justify-content: flex-start;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  nav a {
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+
+  .home-page nav a {
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
   }
 
   .hero,
@@ -930,6 +983,7 @@ main {
   .facts-strip,
   .service-grid,
   .field-notes-grid,
+  .whiting-glossary dl,
   .animal-grid,
   .consulting-species-grid {
     grid-template-columns: 1fr;
